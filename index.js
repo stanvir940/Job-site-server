@@ -47,11 +47,13 @@ app.listen(PORT, () => {
 });
 
 app.post("/submit", async (req, res) => {
-  const { title, technology, partners, description } = req.body;
-  const newProject = new Project({ title, technology, partners, description });
+  // const { title, technology, partners, description } = req.body;
+  const research = req.body;
+  // const newProject = new Project({ title, technology, partners, description });
 
   try {
-    await newProject.save();
+    // await newProject.save();
+    await researchCollection.insertOne(research);
     res.status(201).send({ message: "Project saved successfully" });
   } catch (error) {
     res.status(500).send({ error: "Failed to save project" });
