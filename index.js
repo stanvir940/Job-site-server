@@ -4,6 +4,7 @@ const { connectDB, mongoURI } = require("./db");
 const mongoose = require("mongoose");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
+const serviceAccount = require(process.env.GOOGLE_CLOUD_CREDENTIALS_PATH);
 
 app.use(cors());
 
@@ -50,7 +51,7 @@ app.listen(PORT, () => {
 // getting user id
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./firebase/job-site-f3932-firebase-adminsdk-yn3tj-c83834d58f.json");
+// var serviceAccount = require("./firebase/job-site-f3932-firebase-adminsdk-yn3tj-c83834d58f.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

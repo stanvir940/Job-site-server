@@ -3,3 +3,4 @@ node_modules
 firebase
 job-site-f3932-firebase-adminsdk-yn3tj-c83834d58f
 a 
+config/serviceAccountKey.json
